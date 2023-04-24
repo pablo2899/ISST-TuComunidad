@@ -36,7 +36,7 @@ export default class AppNavbar extends Component {
             <Button color="Link"><Link to="/infos">TABLON DE INFORMACIÓN</Link></Button>
             <Button color="Link"><Link to="/reunions">REUNIONES</Link></Button>
             <Button color="Link"><Link to="/votacions">VOTACIONES</Link></Button>
-            
+            <Button color="Link"><Link to="/reservas">RESERVAS</Link></Button>
 
         </Navbar>;
     }
