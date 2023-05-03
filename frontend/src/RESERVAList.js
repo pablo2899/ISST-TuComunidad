@@ -11,7 +11,7 @@ class RESERVAList extends Component {
   }
 
   componentDidMount() {
-    fetch("/reunions")
+    fetch("/reservas")
       .then((response) => response.json())
       .then((data) => this.setState({ reserva: data }));
   }
@@ -24,17 +24,11 @@ class RESERVAList extends Component {
         "Content-Type": "application/json",
       },
     }).then(() => {
-      let updatedreservas = [...this.state.reserva].filter(
-        (i) => i.IdReservas !== IdReservas
-      );
+      let updatedreservas = [...this.state.reserva].filter((i) => i.IdReservas !== IdReservas);
       this.setState({ reserva: updatedreservas });
     });
   }
-
   
-
-  
-
   render() {
     const RESERVAList = this.state.reserva.map((reserva) => {
       return (
@@ -42,28 +36,10 @@ class RESERVAList extends Component {
           <td style={{ whiteSpace: "nowrap" }}>{reserva.IdReservas}</td>
           <td>{reserva.fechayhorareservada}</td>
           <td>{reserva.espacioreservado}</td>
-          
-          
-
-          <td>
-            <ButtonGroup>
-              <Button
-                size="sm"
-                color="primary"
-                tag={Link}
-                to={"/reservas/" + reserva.IdReservas}
-              >
-                Edit
-              </Button>
-              <Button
-                size="sm"
-                color="danger"
-                onClick={() => this.remove(reserva.IdReservas)}
-              >
-                Delete
-              </Button>
-            </ButtonGroup>
-          </td>
+          <td><ButtonGroup
+          ><Button size="sm" color="primary" tag={Link} to={"/reservas/" + reserva.IdReservas}> Edit </Button>
+          <Button size="sm" color="danger" onClick={() => this.remove(reserva.IdReservas)}> Delete </Button>
+          </ButtonGroup> </td>
         </tr>
       );
     });
@@ -72,12 +48,12 @@ class RESERVAList extends Component {
       <>
         <div>
           <AppNavbar />
-          <h3>RESERVAS</h3>
+          <center> <h3>RESERVAS</h3> </center>
         </div>
         <div>
           <Container fluid>
             <div className="float-right">
-              <Button color="success" tag={Link} to="/reservas/new">
+              <Button color="warning" tag={Link} to="/reservas/new">
                 Añadir Reserva
               </Button>
             </div>

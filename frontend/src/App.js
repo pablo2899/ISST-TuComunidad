@@ -9,6 +9,9 @@ import REUNIONEdit from './REUNIONEdit';
 import VOTACIONList from './VOTACIONList';
 import RESERVAList from './RESERVAList';
 import VOTACIONEdit from './VOTACIONEdit';
+import RESERVAEdit from './RESERVAEdit';
+
+
 class App extends Component {
   render() {
     return (
@@ -22,7 +25,7 @@ class App extends Component {
             <Route path='/votacions' exact={true} component={VOTACIONList}/>
             <Route path='/votacions/:idvotacion' component={VOTACIONEdit}/>
             <Route path='/reservas' exact={true} component={RESERVAList}/>
-
+            <Route path='/reservas/:idreserva' exact={true} component={RESERVAEdit}/>
           </Switch>
         </Router>
     )

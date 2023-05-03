@@ -9,19 +9,6 @@ export default class AppNavbar extends Component {
         this.state = {isOpen: false};
         this.toggle = this.toggle.bind(this);
     }
-   /* async cerarrSesion (){
-        await fetch(`http//:localhost:8083/logout`, {
-            method: "GET", 
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            }
-        
-
-    });
-}
-<NavbarBrand onClick={cerrarSesion()}>Cerrar Sesion</NavbarBrand>
-*/
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen
@@ -31,12 +18,15 @@ export default class AppNavbar extends Component {
     
     render() {
         return <Navbar color="light" secondary expand="md">
-            <NavbarBrand tag={Link} to="/login">Cerrar Sesion</NavbarBrand>
 
+            
+            
+            <Button color="warning"><Link to="/login">Cerrar Sesion</Link></Button>
+            <Button color="succesful"><Link to="/">HOME</Link></Button>
             <Button color="Link"><Link to="/infos">TABLON DE INFORMACIÓN</Link></Button>
             <Button color="Link"><Link to="/reunions">REUNIONES</Link></Button>
             <Button color="Link"><Link to="/votacions">VOTACIONES</Link></Button>
-            
+            <Button color="Link"><Link to="/reservas">RESERVAS</Link></Button>
 
         </Navbar>;
     }

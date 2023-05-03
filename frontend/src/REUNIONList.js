@@ -32,8 +32,6 @@ class REUNIONList extends Component {
     }
     
     render() {
-        
-
         const reunionList = this.state.reunion.sort((a,b)=>a.fechayhora > b.fechayhora ? 1 : -1).map(reunion => {
             return <tr key={reunion.idreunion}>
                 <td style={{whiteSpace: 'nowrap'}}>{reunion.idreunion}</td>
