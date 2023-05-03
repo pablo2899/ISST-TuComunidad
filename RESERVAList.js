@@ -11,7 +11,7 @@ class RESERVAList extends Component {
   }
 
   componentDidMount() {
-    fetch("/reunions")
+    fetch("/reservas")
       .then((response) => response.json())
       .then((data) => this.setState({ reserva: data }));
   }
@@ -28,7 +28,7 @@ class RESERVAList extends Component {
       this.setState({ reserva: updatedreservas });
     });
   }
-
+  
   render() {
     const RESERVAList = this.state.reserva.map((reserva) => {
       return (
