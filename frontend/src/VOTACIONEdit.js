@@ -63,7 +63,7 @@ async handleSubmit(event) {
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label for="fechayhoralimite">FECHA Y HORA LÍMITE</Label>
-                        <Input type="text" name="fechayhoralimite" id="fechayhoralimite" value={item.fechayhoralimite || ''}
+                        <Input type="datetime-local" name="fechayhoralimite" id="fechayhoralimite" value={item.fechayhoralimite || ''}
                                onChange={this.handleChange} autoComplete="fechayhoralimite"/>
                     </FormGroup>
                     <FormGroup>

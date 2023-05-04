@@ -33,7 +33,7 @@ class Home extends Component {
             
             <div style={divStyle2}>
               <Button className="boton" color="warning">
-                <Link to="/infos">Bienvenido a TuComunidad</Link>
+                <Link to="/infos">Bienvenido vecino a TuComunidad</Link>
               </Button>
             </div>
           </div>

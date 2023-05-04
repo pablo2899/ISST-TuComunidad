@@ -16,15 +16,15 @@ class RESERVAList extends Component {
       .then((data) => this.setState({ reserva: data }));
   }
 
-  async remove(IdReservas) {
-    await fetch(`/reservas/${IdReservas}`, {
+  async remove(idreserva) {
+    await fetch(`/reservas/${idreserva}`, {
       method: "DELETE",
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        'Accept': "application/json",
+        'Content-Type': "application/json",
       },
     }).then(() => {
-      let updatedreservas = [...this.state.reserva].filter((i) => i.IdReservas !== IdReservas);
+      let updatedreservas = [...this.state.reserva].filter((i) => i.idreserva !== idreserva);
       this.setState({ reserva: updatedreservas });
     });
   }
@@ -32,13 +32,14 @@ class RESERVAList extends Component {
   render() {
     const RESERVAList = this.state.reserva.map((reserva) => {
       return (
-        <tr key={reserva.IdReservas}>
-          <td style={{ whiteSpace: "nowrap" }}>{reserva.IdReservas}</td>
+        <tr key={reserva.idreserva}>
+          <td style={{ whiteSpace: 'nowrap' }}>{reserva.idreserva}</td>
           <td>{reserva.fechayhorareservada}</td>
           <td>{reserva.espacioreservado}</td>
+          <td>{reserva.estaReservado}</td>
           <td><ButtonGroup
-          ><Button size="sm" color="primary" tag={Link} to={"/reservas/" + reserva.IdReservas}> Edit </Button>
-          <Button size="sm" color="danger" onClick={() => this.remove(reserva.IdReservas)}> Delete </Button>
+          ><Button size="sm" color="primary" tag={Link} to={"/reservas/" + reserva.idreserva}> Edit </Button>
+          <Button size="sm" color="danger" onClick={() => this.remove(reserva.idreserva)}> Delete </Button>
           </ButtonGroup> </td>
         </tr>
       );
@@ -70,8 +71,9 @@ class RESERVAList extends Component {
               <thead>
                 <tr>
                   <th width="30%">IdReserva</th>
-                  <th width="30%">Fecha y Hora Reservada</th>
+                  
                   <th width="30%">Espacio Reservado</th>
+                  
                   
                 </tr>
               </thead>
