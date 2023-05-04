@@ -13,15 +13,16 @@ public class RESERVA {
     private String idreserva;
     private String fechayhora;
     private String espacioreservado;
-    private Boolean estaReservada;
+    private boolean estaReservada;
 
-    public RESERVA () { }
+    
     public RESERVA(String idreserva, String fechayhora,String espacioreservado, Boolean estaReservada) {
         this.idreserva = idreserva;
         this.fechayhora = fechayhora;
         this.espacioreservado = espacioreservado;
         this.estaReservada = estaReservada;
     }
+    public RESERVA () { }
     public String getIdreserva() {
         return idreserva;
     }
@@ -40,7 +41,7 @@ public class RESERVA {
     public void setEspacioreservado(String espacioreservado) {
         this.espacioreservado = espacioreservado;
     }
-    public Boolean getEstaReservada() {
+    public boolean getEstaReservada() {
         return estaReservada;
     }
     public void setEstaReservada(Boolean estaReservada) {
