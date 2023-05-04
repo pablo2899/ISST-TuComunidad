@@ -68,17 +68,24 @@ async handleSubmit(event) {
                     </FormGroup>
                     <FormGroup>
                         <Label for="espacioreservado">ESPACIO RESERVADO</Label>
-                        <Input type="text" name="espacioreservado" id="espacioreservado" value={item.espacioreservado || ''}
+                        <Input type="checkbox" name="espacioreservado" id="espacioreservado" value={item.espacioreservado = 'Pista Padel 1'}
                                onChange={this.handleChange} autoComplete="espacioreservado"/>
+                        <label for='espacio reservado'>Pista Padel 1</label>
+                        <Input type="checkbox" name="espacioreservado" id="espacioreservado" value={item.espacioreservado = 'Pista Padel 2'}
+                               onChange={this.handleChange} autoComplete="espacioreservado"/>
+                        <label for='espacio reservado'>Pista Padel 2</label>
+                        <Input type="checkbox" name="espacioreservado" id="espacioreservado" value={item.espacioreservado = 'Pista Padel 3'}
+                               onChange={this.handleChange} autoComplete="espacioreservado"/>
+                        <label for='espacio reservado'>Pista Padel 3</label>
                     </FormGroup>
                     <FormGroup>
                         <Label for = "estaReservada"> ¿Reservado? </Label>
-                        <Input type="checkbox" name="estaReservada" id="estaReservada" value="true"
-                        onChange={this.handleChange} autoComplete="estaReservada"/>
-                        <label for="estaReservada"> Reservar</label><br></br>
-                        <Input type="checkbox" name="estaReservada" id="estaReservada" value="false"
-                        onChange={this.handleChange} autoComplete="estaReservada"/>
-                        <label for="estaReservada"> No reservado</label><br></br>
+                        <Input type="checkbox" name="estaReservada" id="estaReservada" value={item.espacioreservado = true}
+                               onChange={this.handleChange} autoComplete="estaReservada"/>
+                        <label for='estaReservada'>Reservar</label>
+                        <Input type="checkbox" name="estaReservada" id="estaReservada" value={item.espacioreservado = false}
+                               onChange={this.handleChange} autoComplete="estaReservada"/>
+                        <label for='estaReservada'>No reservar</label>
                     </FormGroup>
                     <FormGroup>
                         <Button color="primary" type="submit">Guardar</Button>{' '}

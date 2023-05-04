@@ -71,9 +71,9 @@ class RESERVAList extends Component {
               <thead>
                 <tr>
                   <th width="30%">IdReserva</th>
-                  
+                  <th width="30%">Fecha y Hora Reservada</th>
                   <th width="30%">Espacio Reservado</th>
-                  
+                  <th width="30%">Esta Reservado</th>
                   
                 </tr>
               </thead>
